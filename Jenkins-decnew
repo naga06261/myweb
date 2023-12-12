@@ -21,9 +21,7 @@ pipeline{
                 sshagent(['tomcat-new']) {
                 sh """
                     scp -o StrictHostKeyChecking=no target/myweb.war  ubuntu@172.31.25.32:/home/ubuntu/apache-tomcat-9.0.64/webapps/
-                    
                     ssh ubuntu@172.31.25.32 /home/ubuntu/apache-tomcat-9.0.64/bin/shutdown.sh
-                    
                     ssh ubuntu@172.31.25.32 /home/ubuntu/apache-tomcat-9.0.64/bin/startup.sh
                 
                 """
